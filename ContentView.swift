@@ -8,13 +8,13 @@ struct ContentView: View {
                     HomepageView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
-                                .foregroundColor(.yellow)
+                                .foregroundColor(.gray)
                         }
                     
                     SettingsView()
                         .tabItem {
                             Label("Settings", systemImage:  "gearshape.fill")
-                                .foregroundColor(.yellow)
+                                .foregroundColor(.gray)
                         }
                 }
                 .foregroundColor(.gray)
