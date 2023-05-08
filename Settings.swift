@@ -2,10 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State var Habit1: String = ""
-    @State var Habit2: String = ""
-    @State var Habit3: String = ""
-    @State var Habit4: String = ""
+     @EnvironmentObject var habits: Habits
     
     @State var SetHabit1 = "Your Habit Here"
     @State var SetHabit2 = "Your Habit Here"
@@ -31,11 +28,11 @@ struct SettingsView: View {
                
                 HStack{
                     
-                    TextField("", text: $Habit1)
+                    TextField("", text: $habits.Habit1)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .onSubmit {
-                            SetHabit1 = Habit1 
+                            SetHabit1 = habits.Habit1 
                         }
                         .foregroundColor(.pink)
                     
@@ -47,11 +44,11 @@ struct SettingsView: View {
                 
                 HStack{
                     
-                    TextField("", text: $Habit2)
+                    TextField("", text: $habits.Habit2)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .onSubmit {
-                            SetHabit2 = Habit2
+                            SetHabit2 = habits.Habit2
                         }
                         .foregroundColor(.pink)
                     
@@ -63,11 +60,11 @@ struct SettingsView: View {
                 
                 HStack{
                     
-                    TextField("", text: $Habit3)
+                    TextField("", text: $habits.Habit3)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .onSubmit {
-                            SetHabit3 = Habit3
+                            SetHabit3 = habits.Habit3
                         }
                     
                     Text("\(SetHabit3)")
@@ -78,11 +75,11 @@ struct SettingsView: View {
                 
                 HStack{
                     
-                    TextField("", text: $Habit4)
+                    TextField("", text: $habits.Habit4)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .onSubmit {
-                            SetHabit4 = Habit4
+                            SetHabit4 = habits.Habit4
                         }
                     
                     Text("\(SetHabit4)")
