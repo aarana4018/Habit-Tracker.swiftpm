@@ -23,7 +23,7 @@ struct SleepView: View {
         
         VStack (spacing: 0) {
             
-            Image("WaterTitle")
+            Image("SleepTitle")
                 .resizable()
                 .frame(width: 500, height: 290)
             
