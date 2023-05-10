@@ -66,6 +66,7 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit3 = habits.Habit3
                         }
+                        .foregroundColor(.pink)
                     
                     Text("\(SetHabit3)")
                         .padding()
@@ -81,6 +82,7 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit4 = habits.Habit4
                         }
+                        .foregroundColor(.pink)
                     
                     Text("\(SetHabit4)")
                         .padding()
