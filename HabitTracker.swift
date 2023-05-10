@@ -14,7 +14,49 @@ struct HabitView: View {
     @State private var isOn3 = false
     @State private var isOn4 = false
     
+    @State var StarOne = "star"
+    @State var StarTwo = "star"
+    @State var StarThree = "star"
+    @State var StarFour = "star"
+    
+    
     var body: some View {
+        
+        HStack (spacing: 10) {
+            
+            VStack{
+                Image(systemName: StarOne)
+                    .font(.system(size: 50))
+                    .foregroundColor(.gray)
+                    .opacity(0.8)
+            }
+            .frame(width: 90, height: 200, alignment: .bottom)
+            
+            VStack{
+                Image(systemName: StarTwo)
+                    .font(.system(size: 80))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+            }
+            .frame(width: 50, height: 40, alignment: .top)
+            
+            VStack{
+                Image(systemName: StarThree)
+                    .font(.system(size: 100))
+                    .foregroundColor(.gray)
+                    .opacity(0.4)
+            }
+            .frame(width: 140, height: 140, alignment: .top)
+            
+            VStack {
+                Image(systemName: StarFour)
+                    .font(.system(size: 150))
+                    .foregroundColor(.gray)
+                    .opacity(0.2)
+            }
+            .frame(width: 150, height: 220, alignment: .top)
+            
+        }
         
         VStack{
             
@@ -86,10 +128,13 @@ struct HabitView: View {
     
     
     struct iOSCheckboxToggleStyle: ToggleStyle {
+        
         func makeBody(configuration: Configuration) -> some View {
             
             Button(action: {
                 configuration.isOn.toggle()
+                if configuration.isOn {
+                }
             }, label: {
                 HStack{
                     Image(systemName: configuration.isOn ? "checkmark.square" : "square")
