@@ -7,10 +7,10 @@ struct WaterView: View {
     @State var WaterIntake: Double = 0.0
     @State var WaterFill = 0.0
     @State var RestatedWaterGoal = "Your Goal Here"
-    @State var toggle: Bool = false
+    @State var WaterToggle: Bool = false
     
-    @State var sentence = ""
-    @State var infoSentence = ""
+    @State var WaterSentence = ""
+    @State var WaterInfoSentence = ""
     
     @State var CloudOne = "cloud"
     @State var CloudTwo = "cloud"
@@ -65,7 +65,7 @@ struct WaterView: View {
             VStack {
                 
                 
-                Text(sentence)
+                Text(WaterSentence)
                     .font(.system(size: 30))
                     .foregroundColor(.gray.opacity(0.5))
                 
@@ -113,7 +113,7 @@ struct WaterView: View {
                 } else {
                     CloudOne = "cloud"
                     
-                    sentence = ""
+                    WaterSentence = ""
                 }
                 
                 if WaterIntake / WaterGoal >= 0.5 {
@@ -123,7 +123,7 @@ struct WaterView: View {
                 } else {
                     CloudTwo = "cloud"
                  
-                    sentence = ""
+                    WaterSentence = ""
                     
                 }
                 
@@ -134,7 +134,7 @@ struct WaterView: View {
                 } else {
                     CloudThree = "cloud"
                     
-                    sentence = ""
+                    WaterSentence = ""
                     
                 } 
                 
@@ -143,11 +143,11 @@ struct WaterView: View {
                     
                     CloudFour = "cloud.heavyrain.fill"
                     
-                    sentence = "Congrats! You met your water goal!"
+                    WaterSentence = "Congrats! You met your water goal!"
                 } else {
                     CloudFour = "cloud"
                     
-                    sentence = ""
+                    WaterSentence = ""
                     
                 }
             }
@@ -161,13 +161,13 @@ struct WaterView: View {
                 
                 Button(action: {
                     
-                    infoSentence = "Reach your recommended water intake by drinking half your weight (in pounds) in ounces!"
+                    WaterInfoSentence = "Reach your recommended water intake by drinking half your weight (in pounds) in ounces!"
                     
-                    toggle.toggle()
+                    WaterToggle.toggle()
                     
-                    if toggle == false {
+                    if WaterToggle == false {
                         
-                        infoSentence = ""
+                        WaterInfoSentence = ""
                         
                     }
                     
@@ -195,7 +195,7 @@ struct WaterView: View {
             }
             .padding()
             
-            Text(infoSentence)
+            Text(WaterInfoSentence)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .foregroundColor(.blue.opacity(0.3))

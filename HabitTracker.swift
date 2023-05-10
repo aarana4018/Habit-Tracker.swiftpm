@@ -12,15 +12,15 @@ struct HabitView: View {
     var body: some View {
         
         VStack{
-            ZStack{
-                Text("\(habits.Habit1)")
-            }
-            
-            Text("\(habits.Habit2)")
-            
-            Text("\(habits.Habit3)")
-            
-            Text("\(habits.Habit4)") 
+//            ZStack{
+//                Text("\(habits.Habit1)")
+//            }
+//            
+//            Text("\(habits.Habit2)")
+//            
+//            Text("\(habits.Habit3)")
+//            
+//            Text("\(habits.Habit4)") 
             
         }
         
