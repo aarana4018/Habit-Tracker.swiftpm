@@ -4,7 +4,7 @@ struct ExcerciseView: View {
     
     var body: some View {
         
-        Text("")
+        Text("Excersise View")
         
     }
 }
