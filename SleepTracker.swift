@@ -29,37 +29,45 @@ struct SleepView: View {
             
             HStack (spacing: 10) {
                 
+                VStack {
+                    Image(systemName: "bed.double.fill")
+                        .font(.system(size: 50))
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                }
+                .frame(width: 10, height: 200, alignment: .bottom)
+                
                 VStack{
                     Image(systemName: "zzz")
                         .font(.system(size: 50))
                         .foregroundColor(ZOne)
-                        .opacity(0.8)
+                        .opacity(0.2)
                 }
-                .frame(width: 90, height: 200, alignment: .bottom)
+                .frame(width: 90, height: 150, alignment: .bottom)
                 
                 VStack{
                     Image(systemName: "zzz")
                         .font(.system(size: 80))
                         .foregroundColor(ZTwo)
-                        .opacity(0.6)
+                        .opacity(0.4)
                 }
-                .frame(width: 50, height: 40, alignment: .top)
+                .frame(width: 30, height: 80, alignment: .top)
                 
                 VStack{
                     Image(systemName: "zzz")
                         .font(.system(size: 100))
                         .foregroundColor(ZThree)
-                        .opacity(0.4)
+                        .opacity(0.6)
                 }
-                .frame(width: 140, height: 140, alignment: .top)
+                .frame(width: 140, height: 160, alignment: .top)
                 
                 VStack {
                     Image(systemName: "zzz")
-                        .font(.system(size: 150))
+                        .font(.system(size: 125))
                         .foregroundColor(ZFour)
-                        .opacity(0.2)
+                        .opacity(0.8)
                 }
-                .frame(width: 150, height: 220, alignment: .top)
+                .frame(width: 70, height: 220, alignment: .top)
                 
             }
             
@@ -73,11 +81,11 @@ struct SleepView: View {
                 ZStack (alignment: .leading) {
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .fill(.blue.opacity(0.4))
+                        .fill(.purple.opacity(0.4))
                         .frame(width: SleepFill, height: 100, alignment: .leading)
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.blue.opacity(0.5), lineWidth: 10)
+                        .strokeBorder(.purple.opacity(0.5), lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
                     
                 }
@@ -144,7 +152,7 @@ struct SleepView: View {
                     
                     ZFour = .purple
                     
-                    SleepSentence = "Congrats! You met your water goal!"
+                    SleepSentence = "Congrats! You met your sleep goal!"
                 } else {
                     ZFour = .gray
                     
@@ -162,7 +170,7 @@ struct SleepView: View {
                 
                 Button(action: {
                     
-                    SleepInfoSentence = "Reach your recommended water intake by drinking half your weight (in pounds) in ounces!"
+                    SleepInfoSentence = "It is recommended to get 9.25 hours of sleep every night, especially for students!"
                     
                     SleepToggle.toggle()
                     
