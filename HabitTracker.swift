@@ -1,5 +1,12 @@
 import SwiftUI
 
+var StarOne = "star"
+var StarTwo = "star"
+var StarThree = "star"
+var StarFour = "star"
+
+var Message = " "
+
 struct HabitView: View {
     
     @EnvironmentObject var habits: Habits
@@ -14,10 +21,8 @@ struct HabitView: View {
     @State private var isOn3 = false
     @State private var isOn4 = false
     
-    @State var StarOne = "star"
-    @State var StarTwo = "star"
-    @State var StarThree = "star"
-    @State var StarFour = "star"
+    
+  
     
     
     var body: some View {
@@ -58,6 +63,10 @@ struct HabitView: View {
             
         }
         
+        Text("\(Message)")
+            .font(.title)
+            .opacity(0.5)
+        
         VStack{
             
             Toggle(isOn: $isOn1){
@@ -73,7 +82,7 @@ struct HabitView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .toggleStyle(iOSCheckboxToggleStyle())
+            .toggleStyle(iOSCheckboxToggleStyle(number: 1))
            
             
             Toggle(isOn: $isOn2){
@@ -89,7 +98,7 @@ struct HabitView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .toggleStyle(iOSCheckboxToggleStyle())
+            .toggleStyle(iOSCheckboxToggleStyle(number: 2))
             
             
             Toggle(isOn: $isOn3){
@@ -105,7 +114,7 @@ struct HabitView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .toggleStyle(iOSCheckboxToggleStyle())
+            .toggleStyle(iOSCheckboxToggleStyle(number: 3))
             
             Toggle(isOn: $isOn4){
                 ZStack{
@@ -120,21 +129,60 @@ struct HabitView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .toggleStyle(iOSCheckboxToggleStyle())
+            .toggleStyle(iOSCheckboxToggleStyle(number: 4))
             
         }
-        
     }
     
+
     
     struct iOSCheckboxToggleStyle: ToggleStyle {
+        
+        let number: Int
         
         func makeBody(configuration: Configuration) -> some View {
             
             Button(action: {
                 configuration.isOn.toggle()
-                if configuration.isOn {
+                if number == 1 {
+                    if configuration.isOn{
+                        StarOne = "star.fill"
+                    } else {
+                        StarOne = "star"
+                    }
                 }
+                
+                if number == 2 {
+                    if configuration.isOn{
+                        StarTwo = "star.fill"
+                    }  else {
+                        StarTwo = "star"
+                    }
+                }
+                
+                if number == 3 {
+                    if configuration.isOn {
+                        StarThree = "star.fill"
+                    } else {
+                        StarThree = "star"
+                    }
+                }
+                    
+                if number == 4 {
+                    if configuration.isOn {
+                        StarFour = "star.fill"
+                    } else {
+                        StarFour = "star"
+                    }
+                }
+                
+                
+                if StarOne == "star.fill" && StarTwo == "star.fill" && StarThree == "star.fill" && StarFour == "star.fill" {
+                    Message = "Congrats! You completed 4 habits!"
+                }
+                
+                 
+            
             }, label: {
                 HStack{
                     Image(systemName: configuration.isOn ? "checkmark.square" : "square")
