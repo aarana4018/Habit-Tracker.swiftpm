@@ -26,6 +26,8 @@ struct WaterView: View {
                 .resizable()
                 .frame(width: 500, height: 290)
             
+            Spacer()
+            
             HStack (spacing: 10) {
                 
                 VStack{
@@ -199,6 +201,8 @@ struct WaterView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .foregroundColor(.blue.opacity(0.3))
+          
+            Spacer()
             
         }
         .padding()

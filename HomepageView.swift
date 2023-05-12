@@ -9,6 +9,8 @@ struct HomepageView: View {
                     .resizable()
                     .frame(width: 600, height: 340)
                 
+                Spacer()
+                
                 Text("Welcome!")
                     .font(.system(size: 30))
                     .foregroundColor(.gray)
@@ -67,6 +69,7 @@ struct HomepageView: View {
                     
                 )
                 
+                Spacer()
                 
             }
             .padding()
