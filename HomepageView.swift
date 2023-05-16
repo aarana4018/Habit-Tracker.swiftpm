@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct HomepageView: View {
+    
+    @EnvironmentObject var habits: Habits
+    
     var body: some View {
         NavigationView  {
             VStack (spacing: 35) {
@@ -27,8 +30,8 @@ struct HomepageView: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(.yellow.opacity(0.5),lineWidth: 10)
-                
                 )
+                .opacity(habits.buttonOpasity1)
                 
                 NavigationLink("Water Tracker") {
                     WaterView()
@@ -42,6 +45,7 @@ struct HomepageView: View {
                         .stroke(.yellow.opacity(0.5),lineWidth: 10)
                     
                 )
+                .opacity(habits.buttonOpasity2)
                 
                 NavigationLink("Sleep Tracker") {
                     SleepView()
@@ -55,6 +59,7 @@ struct HomepageView: View {
                         .stroke(.yellow.opacity(0.5),lineWidth: 10)
                     
                 )
+                .opacity(habits.buttonOpasity3)
                 
                 NavigationLink("Exercise Tracker") {
                     ExcerciseView()
@@ -68,6 +73,7 @@ struct HomepageView: View {
                         .stroke(.yellow.opacity(0.5),lineWidth: 10)
                     
                 )
+                .opacity(habits.buttonOpasity4)
                 
                 Spacer()
                 
