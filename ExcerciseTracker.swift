@@ -12,30 +12,36 @@ struct ExcerciseView: View {
     @State var ExerciseSentence = ""
     @State var ExerciseInfoSentence = ""
     
-    @State var RunMan = "figure.run"
-    @State var Distance: CGFloat = 5.0
+    @State var Distance: CGFloat = 10.0
+    @State var minutes = ""
     
     var body: some View {
         
         VStack (spacing: 0) {
             
-//            Image("WaterTitle")
-//                .resizable()
-//                .frame(width: 500, height: 290)
-            
-            HStack (alignment: .bottom, spacing: 0) {
+            Image("ExerciseTitle")
+                .resizable()
+                .frame(width: 530, height: 320)
+           
+            Spacer()
                 
-                Rectangle()
-                    .frame(width: Distance, height: 5, alignment: .center)
-                    .foregroundColor(.gray)
-                    .opacity(0.5)
+                HStack (alignment: .bottom, spacing: 0) {
                     
-                
-                Image(systemName: RunMan)
-                    .font(.system(size: 50))
-                    .foregroundColor(.green)
-                    .opacity(0.5)
-            }
+                    Rectangle()
+                        .frame(width: Distance, height: 10, alignment: .center)
+                        .foregroundColor(.gray)
+                        .opacity(0.3)
+                    
+                    
+                    
+                    Image(systemName: "figure.run")
+                        .font(.system(size: 70))
+                        .foregroundColor(.green)
+                        .opacity(0.5)
+                }
+                .frame(minWidth: 10, maxWidth: .infinity, minHeight: 10, maxHeight: 60, alignment: .leading)
+                .padding()
+            
             
             VStack {
                 
@@ -52,9 +58,9 @@ struct ExcerciseView: View {
                     RoundedRectangle(cornerRadius: 30)
                         .strokeBorder(.green.opacity(0.5), lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
-                    
                 }
             }
+            .padding()
             
             Text("\(ExerciseIntake, specifier: "%.0f")")
                 .font(.system(size: 30))
@@ -73,81 +79,44 @@ struct ExcerciseView: View {
                     .foregroundColor(.green.opacity(0.5))
             } onEditingChanged: { editing in
                 
-                if ExerciseIntake / ExerciseGoal < 0.25 {
-                    ExerciseFill = 0
+                if ExerciseIntake / ExerciseGoal >= 1 {
+                    ExerciseFill = 600
                     
-                    Distance = 5.0
-                }
-                
-                if ExerciseIntake / ExerciseGoal >= 0.25 {
-                    ExerciseFill = 150
+                    Distance = 725.0
                     
-                } else {
+                    ExerciseSentence = "Congrats! You met your exercise goal!"
+                } else if ExerciseIntake / ExerciseGoal >= 0.75 {
+                    ExerciseFill = 450
                     
-                    Distance = 5.0
+                    Distance = 520.0
                     
                     ExerciseSentence = ""
-                }
-                
-                if ExerciseIntake / ExerciseGoal >= 0.5 {
+                    
+                } else if ExerciseIntake / ExerciseGoal >= 0.5 {
                     ExerciseFill = 300
                     
-                    Distance = 100.0
+                    Distance = 370.0
+                    
+                    ExerciseSentence = ""
+                    
+                } else if ExerciseIntake / ExerciseGoal >= 0.25 {
+                    ExerciseFill = 150
+                    
+                    Distance = 220.0
+                    
+                    ExerciseSentence = ""
                     
                 } else {
+                    ExerciseFill = 0
                     
                     Distance = 10.0
                     
                     ExerciseSentence = ""
                     
                 }
-                
-                if ExerciseIntake / ExerciseGoal >= 0.75 {
-                    ExerciseFill = 450
-                    
-                    Distance = 300.0
-                    
-                } else {
-                    
-                    Distance = 100.0
-                    
-                    ExerciseSentence = ""
-                    
-                } 
-                
-                if ExerciseIntake / ExerciseGoal >= 1 {
-                    ExerciseFill = 600
-                    
-                    Distance = 500.0
-                    
-                    ExerciseSentence = "Congrats! You met your exercise goal!"
-//                } if else ExerciseIntake / ExerciseGoal >= 0.75 {
-//                    
-//                    Distance = 300.0
-//                    
-//                    ExerciseSentence = ""
-//                    
-//                } if else ExerciseIntake / ExerciseGoal >= 0.5 {
-//                    
-//                    Distance = 100.0
-//                    
-//                    ExerciseSentence = ""
-//                    
-//                } if else ExerciseIntake / ExerciseGoal >= 0.25 {
-//                    
-//                    Distance = 50.0
-//                    
-//                    ExerciseSentence = ""
-                    
-                } else {
-                    
-                    Distance = 5.0
-                    
-                    ExerciseSentence = ""
-                    
-                }
             }
             .tint(Color.green.opacity(0.5)) 
+            .padding()
             
             HStack {
                 
@@ -183,9 +152,11 @@ struct ExcerciseView: View {
                         RestatedExerciseGoal = "\(ExerciseGoalInput ?? 15)"
                         
                         ExerciseGoal = ExerciseGoalInput ?? 15
+                        
+                         minutes = "minutes"
                     }
                 
-                Text("\(RestatedExerciseGoal) minutes")
+                Text(RestatedExerciseGoal + " " + minutes)
                     .font(.system(size: 30))
                     .foregroundColor(.green.opacity(0.3))
             }
@@ -195,6 +166,9 @@ struct ExcerciseView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .foregroundColor(.green.opacity(0.3))
+            
+            Spacer()
+            
         }
         .padding()
     }

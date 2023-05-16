@@ -27,111 +27,120 @@ struct HabitView: View {
     
     var body: some View {
         
-        HStack (spacing: 10) {
+        VStack {
+            
+            Image("HabitTitle")
+                .resizable()
+                .frame(width: 530, height: 330)
+            
+            Spacer()
+            
+            HStack (spacing: 10) {
+                
+                VStack{
+                    Image(systemName: StarOne)
+                        .font(.system(size: 50))
+                        .foregroundColor(.gray)
+                        .opacity(0.8)
+                }
+                .frame(width: 90, height: 200, alignment: .bottom)
+                
+                VStack{
+                    Image(systemName: StarTwo)
+                        .font(.system(size: 80))
+                        .foregroundColor(.gray)
+                        .opacity(0.6)
+                }
+                .frame(width: 50, height: 50, alignment: .top)
+                
+                VStack{
+                    Image(systemName: StarThree)
+                        .font(.system(size: 100))
+                        .foregroundColor(.gray)
+                        .opacity(0.4)
+                }
+                .frame(width: 140, height: 140, alignment: .top)
+                
+                VStack {
+                    Image(systemName: StarFour)
+                        .font(.system(size: 150))
+                        .foregroundColor(.gray)
+                        .opacity(0.2)
+                }
+                .frame(width: 120, height: 250, alignment: .top)
+                
+            }
             
             VStack{
-                Image(systemName: StarOne)
-                    .font(.system(size: 50))
-                    .foregroundColor(.gray)
-                    .opacity(0.8)
+                
+                Toggle(isOn: $isOn1){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 5)
+                            .frame(maxWidth: 250, maxHeight: 50)
+                            .foregroundColor(.orange)
+                            .opacity(0.5)
+                            .padding()
+                        
+                        Text("\(habits.Habit1)")
+                            .foregroundColor(.gray)
+                    }
+                }
+                .toggleStyle(iOSCheckboxToggleStyle())
+                
+                
+                Toggle(isOn: $isOn2){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 5)
+                            .frame(maxWidth: 250, maxHeight: 50)
+                            .foregroundColor(.orange)
+                            .opacity(0.5)
+                            .padding()
+                        
+                        Text("\(habits.Habit2)")
+                            .foregroundColor(.gray)
+                    }
+                }
+                .toggleStyle(iOSCheckboxToggleStyle())
+                
+                
+                Toggle(isOn: $isOn3){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 5)
+                            .frame(maxWidth: 250, maxHeight: 50)
+                            .foregroundColor(.orange)
+                            .opacity(0.5)
+                            .padding()
+                        
+                        Text("\(habits.Habit3)")
+                            .foregroundColor(.gray)
+                    }
+                }
+                .toggleStyle(iOSCheckboxToggleStyle())
+                
+                Toggle(isOn: $isOn4){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 5)
+                            .frame(maxWidth: 250, maxHeight: 50)
+                            .foregroundColor(.orange)
+                            .opacity(0.5)
+                            .padding()
+                        
+                        Text("\(habits.Habit4)")
+                            .foregroundColor(.gray)
+                    }
+                }
+                .toggleStyle(iOSCheckboxToggleStyle())
+                
             }
-            .frame(width: 90, height: 200, alignment: .bottom)
             
-            VStack{
-                Image(systemName: StarTwo)
-                    .font(.system(size: 80))
-                    .foregroundColor(.gray)
-                    .opacity(0.6)
-            }
-            .frame(width: 50, height: 40, alignment: .top)
-            
-            VStack{
-                Image(systemName: StarThree)
-                    .font(.system(size: 100))
-                    .foregroundColor(.gray)
-                    .opacity(0.4)
-            }
-            .frame(width: 140, height: 140, alignment: .top)
-            
-            VStack {
-                Image(systemName: StarFour)
-                    .font(.system(size: 150))
-                    .foregroundColor(.gray)
-                    .opacity(0.2)
-            }
-            .frame(width: 150, height: 220, alignment: .top)
+            Spacer()
             
         }
-        
-        Text("\(Message)")
-            .font(.title)
-            .opacity(0.5)
-        
-        VStack{
-            
-            Toggle(isOn: $isOn1){
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 5)
-                        .frame(maxWidth: 250, maxHeight: 50)
-                        .foregroundColor(.orange)
-                        .opacity(0.5)
-                        .padding()
-                    
-                    Text("\(habits.Habit1)")
-                        .foregroundColor(.gray)
-                }
-            }
-            .toggleStyle(iOSCheckboxToggleStyle(number: 1))
-           
-            
-            Toggle(isOn: $isOn2){
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 5)
-                        .frame(maxWidth: 250, maxHeight: 50)
-                        .foregroundColor(.orange)
-                        .opacity(0.5)
-                        .padding()
-                    
-                    Text("\(habits.Habit2)")
-                        .foregroundColor(.gray)
-                }
-            }
-            .toggleStyle(iOSCheckboxToggleStyle(number: 2))
-            
-            
-            Toggle(isOn: $isOn3){
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 5)
-                        .frame(maxWidth: 250, maxHeight: 50)
-                        .foregroundColor(.orange)
-                        .opacity(0.5)
-                        .padding()
-                    
-                    Text("\(habits.Habit3)")
-                        .foregroundColor(.gray)
-                }
-            }
-            .toggleStyle(iOSCheckboxToggleStyle(number: 3))
-            
-            Toggle(isOn: $isOn4){
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 5)
-                        .frame(maxWidth: 250, maxHeight: 50)
-                        .foregroundColor(.orange)
-                        .opacity(0.5)
-                        .padding()
-                    
-                    Text("\(habits.Habit4)")
-                        .foregroundColor(.gray)
-                }
-            }
-            .toggleStyle(iOSCheckboxToggleStyle(number: 4))
-            
-        }
+        .padding()
     }
     
 

@@ -19,6 +19,8 @@ struct SettingsView: View {
                     .resizable()
                     .frame(width: 500, height: 290)
                 
+                Spacer()
+                
                 Text("Set Your Habits:")
                     .foregroundColor(.pink)
                     .font(.title)
@@ -91,16 +93,9 @@ struct SettingsView: View {
                 }
             }
             
-                        
-            Divider()
-                .frame(width: 400, height: 20)
-            
             Text("Remove a Tracker:")
                 .font(.title)
                 .foregroundColor(.pink)
-            
-            Divider()
-                .frame(width: 400, height: 20)
             
             VStack {
                 
@@ -246,7 +241,12 @@ struct SettingsView: View {
                     })
                 }
             }
+            .padding()
+            
+           Spacer()
+            
         }
+        .padding()
     }
 }
 

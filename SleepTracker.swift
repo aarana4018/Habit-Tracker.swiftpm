@@ -27,6 +27,8 @@ struct SleepView: View {
                 .resizable()
                 .frame(width: 500, height: 290)
             
+            Spacer()
+            
             HStack (spacing: 10) {
                 
                 VStack {
@@ -208,6 +210,8 @@ struct SleepView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .foregroundColor(.purple.opacity(0.3))
+            
+            Spacer()
             
         }
         .padding()
