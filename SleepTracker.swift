@@ -4,20 +4,19 @@ import SwiftUI
 struct SleepView: View {
     
     @State var SleepGoalInput: Double? = 0.0 
-    @State var SleepGoal: Double = 0.0
-    @State var SleepIntake: Double = 0.0
-    @State var SleepFill = 0.0
-    @State var RestatedSleepGoal = "Your Goal Here"
-    @State var SleepToggle: Bool = false
+    @State var SleepGoal: Double = UserDefaults.standard.double(forKey: "SleepGoal")
+    @State var SleepIntake: Double = UserDefaults.standard.double(forKey: "SleepIntake")
+    @State var SleepFill = UserDefaults.standard.double(forKey: "SleepFill")
+    @State var RestatedSleepGoal = UserDefaults.standard.string(forKey: "RestatedSleepGoal")
+    @State var SleepToggle: Bool = UserDefaults.standard.bool(forKey: "SleepToggle")
     
-    @State var SleepSentence = ""
-    @State var SleepInfoSentence = ""
+    @State var SleepSentence = UserDefaults.standard.string(forKey: "SleepSentence")
+    @State var SleepInfoSentence = UserDefaults.standard.string(forKey: "SleepInfoSentence")
     
     @State var ZOne: Color = .gray
     @State var ZTwo: Color = .gray
     @State var ZThree: Color = .gray
     @State var ZFour: Color = .gray
-    
     
     var body: some View {
         
@@ -76,7 +75,7 @@ struct SleepView: View {
             VStack {
                 
                 
-                Text(SleepSentence)
+                Text(SleepSentence ?? "")
                     .font(.system(size: 30))
                     .foregroundColor(.gray.opacity(0.5))
                 
@@ -161,6 +160,11 @@ struct SleepView: View {
                     SleepSentence = ""
                     
                 }
+                
+                UserDefaults.standard.set(SleepIntake, forKey: "SleepIntake")
+                UserDefaults.standard.set(SleepFill, forKey: "SleepFill")
+                UserDefaults.standard.set(SleepSentence, forKey: "SleepSentence")
+                
             }
             .tint(Color.purple.opacity(0.5)) 
             
@@ -182,13 +186,14 @@ struct SleepView: View {
                         
                     }
                     
+                    UserDefaults.standard.set(SleepToggle, forKey: "SleepToggle")
+                    
                 }, label: {
                     Image(systemName: "info.circle")
                 })
                 .font(.system(size: 25))
                 .foregroundColor(.gray.opacity(0.5))
             }
-            
             
             HStack {
                 
@@ -198,15 +203,18 @@ struct SleepView: View {
                         RestatedSleepGoal = "\(SleepGoalInput ?? 8)"
                         
                         SleepGoal = SleepGoalInput ?? 8
+                        
+                        UserDefaults.standard.set(SleepGoal, forKey: "SleepGoal")
+                        UserDefaults.standard.set(RestatedSleepGoal, forKey: "RestatedSleepGoal")
                     }
                 
-                Text(RestatedSleepGoal)
+                Text(RestatedSleepGoal ?? "Your Goal Here")
                     .font(.system(size: 30))
                     .foregroundColor(.purple.opacity(0.3))
             }
             .padding()
             
-            Text(SleepInfoSentence)
+            Text(SleepInfoSentence ?? "")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .foregroundColor(.purple.opacity(0.3))
@@ -218,3 +226,4 @@ struct SleepView: View {
         
     }
 }
+    

@@ -86,7 +86,7 @@ struct HabitView: View {
                             .foregroundColor(.gray)
                     }
                 }
-                .toggleStyle(iOSCheckboxToggleStyle())
+                .toggleStyle(iOSCheckboxToggleStyle(number: 1))
                 
                 
                 Toggle(isOn: $isOn2){
@@ -102,7 +102,7 @@ struct HabitView: View {
                             .foregroundColor(.gray)
                     }
                 }
-                .toggleStyle(iOSCheckboxToggleStyle())
+                .toggleStyle(iOSCheckboxToggleStyle(number: 2))
                 
                 
                 Toggle(isOn: $isOn3){
@@ -118,7 +118,7 @@ struct HabitView: View {
                             .foregroundColor(.gray)
                     }
                 }
-                .toggleStyle(iOSCheckboxToggleStyle())
+                .toggleStyle(iOSCheckboxToggleStyle(number: 3))
                 
                 Toggle(isOn: $isOn4){
                     ZStack{
@@ -133,7 +133,7 @@ struct HabitView: View {
                             .foregroundColor(.gray)
                     }
                 }
-                .toggleStyle(iOSCheckboxToggleStyle())
+                .toggleStyle(iOSCheckboxToggleStyle(number: 4))
                 
             }
             
