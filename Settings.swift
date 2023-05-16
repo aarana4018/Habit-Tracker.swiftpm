@@ -118,7 +118,7 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity1 = 1.0
                     }, label: {
                         Image(systemName: "checkmark")
                             .resizable()
@@ -128,7 +128,7 @@ struct SettingsView: View {
                     })
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity1 = 0.3
                     }, label: {
                         Image(systemName: "xmark")
                             .resizable()
@@ -136,6 +136,7 @@ struct SettingsView: View {
                             .padding()
                             .foregroundColor(.pink)
                     })
+                    
                 }
                 
                 
@@ -154,7 +155,7 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity2 = 1.0
                     }, label: {
                         Image(systemName: "checkmark")
                             .resizable()
@@ -164,7 +165,7 @@ struct SettingsView: View {
                     })
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity2 = 0.3
                     }, label: {
                         Image(systemName: "xmark")
                             .resizable()
@@ -190,7 +191,7 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity3 = 1.0
                     }, label: {
                         Image(systemName: "checkmark")
                             .resizable()
@@ -200,7 +201,7 @@ struct SettingsView: View {
                     })
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity3 = 0.3
                     }, label: {
                         Image(systemName: "xmark")
                             .resizable()
@@ -224,7 +225,7 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity4 = 1.0
                     }, label: {
                         Image(systemName: "checkmark")
                             .resizable()
@@ -235,7 +236,7 @@ struct SettingsView: View {
                     })
                     
                     Button(action: {
-                        
+                        habits.buttonOpasity4 = 0.3
                     }, label: {
                         Image(systemName: "xmark")
                             .resizable()
