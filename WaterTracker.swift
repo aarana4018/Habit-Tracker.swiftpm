@@ -3,19 +3,20 @@ import SwiftUI
 struct WaterView: View {
     
     @State var WaterGoalInput: Double? = 0.0 
-    @State var WaterGoal: Double = 0.0
-    @State var WaterIntake: Double = 0.0
-    @State var WaterFill = 0.0
-    @State var RestatedWaterGoal = "Your Goal Here"
-    @State var WaterToggle: Bool = false
     
-    @State var WaterSentence = ""
-    @State var WaterInfoSentence = ""
+    @AppStorage("WaterGoal") var WaterGoal: Double = 0.0
+    @AppStorage("WaterIntake") var WaterIntake: Double = 0.0
+    @AppStorage("WaterFill") var WaterFill: Double = 0.0
+    @AppStorage("RestatedWaterGoal") var RestatedWaterGoal: String = "Your Goal Here"
+    @AppStorage("WaterToggle") var WaterToggle: Bool = false
     
-    @State var CloudOne = "cloud"
-    @State var CloudTwo = "cloud"
-    @State var CloudThree = "cloud"
-    @State var CloudFour = "cloud"
+    @AppStorage("WaterSentence") var WaterSentence: String = ""
+    @AppStorage("WaterInfoSentence") var WaterInfoSentence: String = ""
+    
+    @AppStorage("CloudOne") var CloudOne: String = "cloud"
+    @AppStorage("CloudTwo") var CloudTwo: String = "cloud"
+    @AppStorage("CloudThree") var CloudThree: String = "cloud"
+    @AppStorage("CloudFour") var CloudFour: String = "cloud"
     
     
     var body: some View {

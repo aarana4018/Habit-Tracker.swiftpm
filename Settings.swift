@@ -4,10 +4,10 @@ struct SettingsView: View {
     
      @EnvironmentObject var habits: Habits
     
-    @State var SetHabit1 = "Your Habit Here"
-    @State var SetHabit2 = "Your Habit Here"
-    @State var SetHabit3 = "Your Habit Here"
-    @State var SetHabit4 = "Your Habit Here"
+    @AppStorage("SetHabit1") var SetHabit1: String = "Your Habit Here"
+    @AppStorage("SetHabit2") var SetHabit2: String = "Your Habit Here"
+    @AppStorage("SetHabit3") var SetHabit3: String = "Your Habit Here"
+    @AppStorage("SetHabit4") var SetHabit4: String = "Your Habit Here"
     
     var body: some View {
         

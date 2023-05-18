@@ -11,19 +11,15 @@ struct HabitView: View {
     
     @EnvironmentObject var habits: Habits
     
-    @State var CheckBox1: Bool = false
-    @State var CheckBox2: Bool = false
-    @State var CheckBox3: Bool = false
-    @State var CheckBox4: Bool = false
+    @AppStorage("CheckBox1") var CheckBox1: Bool = false
+    @AppStorage("CheckBox2") var CheckBox2: Bool = false
+    @AppStorage("CheckBox3") var CheckBox3: Bool = false
+    @AppStorage("CheckBox4") var CheckBox4: Bool = false
     
-    @State private var isOn1 = false
-    @State private var isOn2 = false
-    @State private var isOn3 = false
-    @State private var isOn4 = false
-    
-    
-  
-    
+    @AppStorage("isOn1") private var isOn1 = false
+    @AppStorage("isOn2") private var isOn2 = false
+    @AppStorage("isOn3") private var isOn3 = false
+    @AppStorage("isOn4") private var isOn4 = false
     
     var body: some View {
         
