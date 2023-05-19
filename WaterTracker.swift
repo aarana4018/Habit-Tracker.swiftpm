@@ -5,8 +5,8 @@ struct WaterView: View {
     @State var WaterGoalInput: Double? = 0.0 
     @State var WaterGoal: Double = 0.0
     @State var WaterIntake: Double = 0.0
-    @State var WaterFill = 0.0
-    @State var RestatedWaterGoal = "Your Goal Here"
+    @State var WaterFill: Double = 0.0
+    @State var RestatedWaterGoal = ""
     @State var WaterToggle: Bool = false
     
     @State var WaterSentence = ""
@@ -172,7 +172,6 @@ struct WaterView: View {
                         WaterInfoSentence = ""
                         
                     }
-                    
                 }, label: {
                     Image(systemName: "info.circle")
                 })
