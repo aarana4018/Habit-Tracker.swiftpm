@@ -2,18 +2,22 @@ import SwiftUI
 
 struct ExcerciseView: View {
     
-    @State var ExerciseGoalInput: Double? = 0.0 
-    @State var ExerciseGoal: Double = 0.0
-    @State var ExerciseIntake: Double = 0.0
-    @State var ExerciseFill = 0.0
-    @State var RestatedExerciseGoal = "Your Goal Here"
-    @State var ExerciseToggle: Bool = false
+    @AppStorage("ExerciseGoalInput") var ExerciseGoalInput: Double?
     
-    @State var ExerciseSentence = ""
-    @State var ExerciseInfoSentence = ""
+    @AppStorage("ExerciseGoal") var ExerciseGoal: Double = 0.0
+    @AppStorage("ExerciseIntake") var ExerciseIntake: Double = 0.0
+    @AppStorage("ExerciseFill") var ExerciseFill = 0.0
+    @AppStorage("RestatedExerciseGoal") var RestatedExerciseGoal: String = "Your Goal Here"
+    @AppStorage("ExerciseToggle") var ExerciseToggle: Bool = false
+    
+    @AppStorage("ExerciseSentence") var ExerciseSentence: String = ""
+    @AppStorage("ExerciseInfoSentence") var ExerciseInfoSentence: String = ""
+    
+//    @AppStorage("Distance") var Distance: CGFloat = 10.0
     
     @State var Distance: CGFloat = 10.0
-    @State var minutes = ""
+    
+    @AppStorage("minutes") var minutes: String = ""
     
     var body: some View {
         
@@ -133,7 +137,6 @@ struct ExcerciseView: View {
                     if ExerciseToggle == false {
                         
                         ExerciseInfoSentence = ""
-                        
                     }
                     
                 }, label: {
@@ -142,7 +145,6 @@ struct ExcerciseView: View {
                 .font(.system(size: 25))
                 .foregroundColor(.gray.opacity(0.5))
             }
-            
             
             HStack {
                 

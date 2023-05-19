@@ -3,21 +3,26 @@ import SwiftUI
 
 struct SleepView: View {
     
-    @State var SleepGoalInput: Double? = 0.0 
-    @State var SleepGoal: Double = 0.0
-    @State var SleepIntake: Double = 0.0
-    @State var SleepFill = 0.0
-    @State var RestatedSleepGoal = "Your Goal Here"
-    @State var SleepToggle: Bool = false
+    @AppStorage("SleepGoalInput") var SleepGoalInput: Double?
     
-    @State var SleepSentence = ""
-    @State var SleepInfoSentence = ""
+    @AppStorage("SleepGoal") var SleepGoal: Double = 0.0
+    @AppStorage("SleepIntake") var SleepIntake: Double = 0.0
+    @AppStorage("SleepFill") var SleepFill: Double = 0.0
+    @AppStorage("RestatedSleepGoal") var RestatedSleepGoal: String = "Your Goal Here"
+    @AppStorage("SleepToggle") var SleepToggle: Bool = false
     
+    @AppStorage("SleepSentence") var SleepSentence: String = ""
+    @AppStorage("SleepInfoSentence") var SleepInfoSentence: String = ""
+
     @State var ZOne: Color = .gray
     @State var ZTwo: Color = .gray
     @State var ZThree: Color = .gray
     @State var ZFour: Color = .gray
     
+//    @AppStorage("ZOne") var ZOne: Color = .gray
+//    @AppStorage("ZTwo") var ZTwo: Color = .gray
+//    @AppStorage("ZThree") var ZThree: Color = .gray
+//    @AppStorage("ZFour") var ZFour: Color = .gray
     
     var body: some View {
         
@@ -75,7 +80,6 @@ struct SleepView: View {
             
             VStack {
                 
-                
                 Text(SleepSentence)
                     .font(.system(size: 30))
                     .foregroundColor(.gray.opacity(0.5))
@@ -89,7 +93,6 @@ struct SleepView: View {
                     RoundedRectangle(cornerRadius: 30)
                         .strokeBorder(.purple.opacity(0.5), lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
-                    
                 }
             }
             
@@ -181,14 +184,12 @@ struct SleepView: View {
                         SleepInfoSentence = ""
                         
                     }
-                    
                 }, label: {
                     Image(systemName: "info.circle")
                 })
                 .font(.system(size: 25))
                 .foregroundColor(.gray.opacity(0.5))
             }
-            
             
             HStack {
                 
@@ -218,3 +219,4 @@ struct SleepView: View {
         
     }
 }
+    
