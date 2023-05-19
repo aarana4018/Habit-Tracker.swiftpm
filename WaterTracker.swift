@@ -2,7 +2,7 @@ import SwiftUI
 
 struct WaterView: View {
     
-    @State var WaterGoalInput: Double? = 0.0 
+    @AppStorage("WaterGoalInput") var WaterGoalInput: Double? 
     
     @AppStorage("WaterGoal") var WaterGoal: Double = 0.0
     @AppStorage("WaterIntake") var WaterIntake: Double = 0.0

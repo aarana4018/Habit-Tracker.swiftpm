@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ExcerciseView: View {
     
-    @State var ExerciseGoalInput: Double? = 0.0 
+    @AppStorage("ExerciseGoalInput") var ExerciseGoalInput: Double?
     
     @AppStorage("ExerciseGoal") var ExerciseGoal: Double = 0.0
     @AppStorage("ExerciseIntake") var ExerciseIntake: Double = 0.0

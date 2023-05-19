@@ -3,8 +3,7 @@ import SwiftUI
 
 struct SleepView: View {
     
-//    @AppStorage("SleepGoalInput") var SleepGoalInput: Double? = 0.0
-    @State var SleepGoalInput: Double? = 0.0
+    @AppStorage("SleepGoalInput") var SleepGoalInput: Double?
     
     @AppStorage("SleepGoal") var SleepGoal: Double = 0.0
     @AppStorage("SleepIntake") var SleepIntake: Double = 0.0
