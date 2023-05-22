@@ -36,7 +36,7 @@ struct HabitView: View {
                 VStack{
                     Image(systemName: StarOne)
                         .font(.system(size: 50))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.orange)
                         .opacity(0.8)
                 }
                 .frame(width: 90, height: 200, alignment: .bottom)
@@ -44,7 +44,7 @@ struct HabitView: View {
                 VStack{
                     Image(systemName: StarTwo)
                         .font(.system(size: 80))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.orange)
                         .opacity(0.6)
                 }
                 .frame(width: 50, height: 50, alignment: .top)
@@ -52,7 +52,7 @@ struct HabitView: View {
                 VStack{
                     Image(systemName: StarThree)
                         .font(.system(size: 100))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.orange)
                         .opacity(0.4)
                 }
                 .frame(width: 140, height: 140, alignment: .top)
@@ -60,11 +60,17 @@ struct HabitView: View {
                 VStack {
                     Image(systemName: StarFour)
                         .font(.system(size: 150))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.orange)
                         .opacity(0.2)
                 }
                 .frame(width: 120, height: 250, alignment: .top)
                 
+            }
+            
+            VStack {
+                Text(Message)
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray.opacity(0.5))
             }
             
             VStack{
