@@ -67,6 +67,12 @@ struct HabitView: View {
                 
             }
             
+            VStack {
+                Text(Message)
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray.opacity(0.5))
+            }
+            
             VStack{
                 
                 Toggle(isOn: $isOn1){
