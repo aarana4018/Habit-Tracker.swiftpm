@@ -184,6 +184,8 @@ struct HabitView: View {
                 
                 if StarOne == "star.fill" && StarTwo == "star.fill" && StarThree == "star.fill" && StarFour == "star.fill" {
                     Message = "Congrats! You completed 4 habits!"
+                } else {
+                    Message = ""
                 }
                 
                  
