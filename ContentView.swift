@@ -16,6 +16,13 @@ struct ContentView: View {
                             Label("Settings", systemImage:  "gearshape.fill")
                                 .foregroundColor(.gray)
                         }
+                    
+                    CalendarView()
+                        .tabItem { 
+                            Label("Calendar", systemImage: "calendar")
+                                .foregroundColor(.gray)
+                        }
+                    
                 }
                 .foregroundColor(.gray)
                 .accentColor(.black)
