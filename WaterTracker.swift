@@ -173,7 +173,6 @@ struct WaterView: View {
                         WaterInfoSentence = ""
                         
                     }
-                    
                 }, label: {
                     Image(systemName: "info.circle")
                 })

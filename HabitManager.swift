@@ -1,7 +1,7 @@
 //import SwiftUI
 //
 //struct HabitManager {
-//
+//    
 //    func getHabit() -> Habits {
 //        if let object = UserDefaults.standard.data(forKey: "habits") {
 //            if let objectDecoded = try? JSONDecoder().decode(Habits.self, from: object) as Habits {
@@ -12,7 +12,7 @@
 //        }
 //        return Habits()
 //    }
-//
+//    
 //    func setHabit(habits: Habits) {
 //        if let encoded = try? JSONEncoder().encode(habits){
 //            UserDefaults.standard.set(encoded, forKey: "habits")
@@ -20,6 +20,6 @@
 //            print("Encoding Failed")
 //        }
 //    }
-//
+//    
 //}
 
