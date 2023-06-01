@@ -87,18 +87,18 @@ struct SleepView: View {
                 ZStack (alignment: .leading) {
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .fill(.purple.opacity(0.4))
+                        .fill(SleepCustomColor.SleepColorTwo)
                         .frame(width: SleepFill, height: 100, alignment: .leading)
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.purple.opacity(0.5), lineWidth: 10)
+                        .strokeBorder(SleepCustomColor.SleepColorOne, lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
                 }
             }
             
             Text("\(SleepIntake, specifier: "%.0f")")
                 .font(.system(size: 30))
-                .foregroundColor(.purple.opacity(0.5))
+                .foregroundColor(SleepCustomColor.SleepColorOne)
             
             Slider(
                 value: $SleepIntake, 
@@ -107,10 +107,10 @@ struct SleepView: View {
                 Text("Sleep Intake") 
             } minimumValueLabel: {
                 Text("0")
-                    .foregroundColor(.purple.opacity(0.5))
+                    .foregroundColor(SleepCustomColor.SleepColorTwo)
             } maximumValueLabel: {
                 Text("\(SleepGoal, specifier: "%.0f")")
-                    .foregroundColor(.purple.opacity(0.5))
+                    .foregroundColor(SleepCustomColor.SleepColorTwo)
             } onEditingChanged: { editing in
                 
                 if SleepIntake / SleepGoal < 0.25 {
@@ -122,7 +122,7 @@ struct SleepView: View {
                 if SleepIntake / SleepGoal >= 0.25 {
                     SleepFill = 150
                     
-                    ZOne = .purple
+                    ZOne = SleepCustomColor.SleepColorOne
                     
                 } else {
                     ZOne = .gray
@@ -133,7 +133,7 @@ struct SleepView: View {
                 if SleepIntake / SleepGoal >= 0.5 {
                     SleepFill = 300
                     
-                    ZTwo = .purple
+                    ZTwo = SleepCustomColor.SleepColorOne
                 } else {
                     ZTwo = .gray
                     
@@ -144,7 +144,7 @@ struct SleepView: View {
                 if SleepIntake / SleepGoal >= 0.75 {
                     SleepFill = 450
                     
-                    ZThree = .purple
+                    ZThree = SleepCustomColor.SleepColorOne
                 } else {
                     ZThree = .gray
                     
@@ -155,7 +155,7 @@ struct SleepView: View {
                 if SleepIntake / SleepGoal >= 1 {
                     SleepFill = 600
                     
-                    ZFour = .purple
+                    ZFour = SleepCustomColor.SleepColorOne
                     
                     SleepSentence = "Congrats! You met your sleep goal!"
                 } else {
@@ -165,7 +165,7 @@ struct SleepView: View {
                     
                 }
             }
-            .tint(Color.purple.opacity(0.5)) 
+            .tint(SleepCustomColor.SleepColorOne)
             
             HStack {
                 
@@ -203,14 +203,14 @@ struct SleepView: View {
                 
                 Text(RestatedSleepGoal)
                     .font(.system(size: 30))
-                    .foregroundColor(.purple.opacity(0.3))
+                    .foregroundColor(SleepCustomColor.SleepColorTwo)
             }
             .padding()
             
             Text(SleepInfoSentence)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
-                .foregroundColor(.purple.opacity(0.3))
+                .foregroundColor(SleepCustomColor.SleepColorTwo)
             
             Spacer()
             
@@ -220,3 +220,8 @@ struct SleepView: View {
     }
 }
     
+struct SleepCustomColor {
+    static let SleepColorOne = Color("SleepColorOne")
+    
+    static let SleepColorTwo = Color("SleepColorTwo")
+}
