@@ -40,8 +40,7 @@ struct ExcerciseView: View {
                     
                     Image(systemName: "figure.run")
                         .font(.system(size: 70))
-                        .foregroundColor(.green)
-                        .opacity(0.5)
+                        .foregroundColor(ExerciseCustomColor.ExerciseColorOne)
                 }
                 .frame(minWidth: 10, maxWidth: .infinity, minHeight: 10, maxHeight: 60, alignment: .leading)
                 .padding()
@@ -56,11 +55,11 @@ struct ExcerciseView: View {
                 ZStack (alignment: .leading) {
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .fill(.green.opacity(0.4))
+                        .fill(ExerciseCustomColor.ExerciseColorOne)
                         .frame(width: ExerciseFill, height: 100, alignment: .leading)
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.green.opacity(0.5), lineWidth: 10)
+                        .strokeBorder(ExerciseCustomColor.ExerciseColorTwo, lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
                 }
             }
@@ -68,7 +67,7 @@ struct ExcerciseView: View {
             
             Text("\(ExerciseIntake, specifier: "%.0f")")
                 .font(.system(size: 30))
-                .foregroundColor(.green.opacity(0.5))
+                .foregroundColor(ExerciseCustomColor.ExerciseColorOne)
             
             Slider(
                 value: $ExerciseIntake, 
@@ -77,10 +76,10 @@ struct ExcerciseView: View {
                 Text("Exercise Intake") 
             } minimumValueLabel: {
                 Text("0")
-                    .foregroundColor(.green.opacity(0.5))
+                    .foregroundColor(ExerciseCustomColor.ExerciseColorTwo)
             } maximumValueLabel: {
                 Text("\(ExerciseGoal, specifier: "%.0f")")
-                    .foregroundColor(.green.opacity(0.5))
+                    .foregroundColor(ExerciseCustomColor.ExerciseColorTwo)
             } onEditingChanged: { editing in
                 
                 if ExerciseIntake / ExerciseGoal >= 1 {
@@ -119,7 +118,7 @@ struct ExcerciseView: View {
                     
                 }
             }
-            .tint(Color.green.opacity(0.5)) 
+            .tint(ExerciseCustomColor.ExerciseColorTwo) 
             .padding()
             
             HStack {
@@ -160,14 +159,14 @@ struct ExcerciseView: View {
                 
                 Text(RestatedExerciseGoal + " " + minutes)
                     .font(.system(size: 30))
-                    .foregroundColor(.green.opacity(0.3))
+                    .foregroundColor(ExerciseCustomColor.ExerciseColorOne)
             }
             .padding()
             
             Text(ExerciseInfoSentence)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
-                .foregroundColor(.green.opacity(0.3))
+                .foregroundColor(ExerciseCustomColor.ExerciseColorOne)
             
             Spacer()
             
@@ -176,3 +175,8 @@ struct ExcerciseView: View {
     }
 }
 
+struct ExerciseCustomColor {
+    static let ExerciseColorOne = Color("ExerciseColorOne")
+    
+    static let ExerciseColorTwo = Color("ExerciseColorTwo")
+}
