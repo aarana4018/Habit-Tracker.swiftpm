@@ -29,7 +29,7 @@ struct HomepageView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(.yellow.opacity(0.5),lineWidth: 10)
+                        .stroke(TrackItCustomColor.TrackItColor, lineWidth: 10)
                 )
                 .opacity(habits.buttonOpasity1)
                 
@@ -42,7 +42,7 @@ struct HomepageView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(.yellow.opacity(0.5),lineWidth: 10)
+                        .stroke(TrackItCustomColor.TrackItColor, lineWidth: 10)
                     
                 )
                 .opacity(habits.buttonOpasity2)
@@ -56,7 +56,7 @@ struct HomepageView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(.yellow.opacity(0.5),lineWidth: 10)
+                        .stroke(TrackItCustomColor.TrackItColor, lineWidth: 10)
                     
                 )
                 .opacity(habits.buttonOpasity3)
@@ -70,7 +70,7 @@ struct HomepageView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(.yellow.opacity(0.5),lineWidth: 10)
+                        .stroke(TrackItCustomColor.TrackItColor, lineWidth: 10)
                     
                 )
                 .opacity(habits.buttonOpasity4)
@@ -84,3 +84,6 @@ struct HomepageView: View {
     }
 }
 
+struct TrackItCustomColor {
+    static let TrackItColor = Color("TrackItColor")
+}

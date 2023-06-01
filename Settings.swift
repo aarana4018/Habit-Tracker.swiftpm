@@ -22,7 +22,7 @@ struct SettingsView: View {
                 Spacer()
                 
                 Text("Set Your Habits:")
-                    .foregroundColor(CustomColor.SettingsColorOne)
+                    .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     .font(.title)
                 
                 Divider()
@@ -36,11 +36,11 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit1 = habits.Habit1 
                         }
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                     Text("\(SetHabit1)")
                         .padding()
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                 }
                 
@@ -52,11 +52,11 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit2 = habits.Habit2
                         }
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                     Text("\(SetHabit2)")
                         .padding()
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                 }
                 
@@ -68,11 +68,11 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit3 = habits.Habit3
                         }
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                     Text("\(SetHabit3)")
                         .padding()
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                 }
                 
@@ -84,18 +84,18 @@ struct SettingsView: View {
                         .onSubmit {
                             SetHabit4 = habits.Habit4
                         }
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                     Text("\(SetHabit4)")
                         .padding()
-                        .foregroundColor(CustomColor.SettingsColorOne)
+                        .foregroundColor(SettingsCustomColor.SettingsColorOne)
                     
                 }
             }
             
             Text("Remove a Tracker:")
                 .font(.title)
-                .foregroundColor(CustomColor.SettingsColorOne)
+                .foregroundColor(SettingsCustomColor.SettingsColorOne)
             
             VStack {
                 
@@ -105,7 +105,7 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(CustomColor.SettingsColorOne)
+                            .foregroundColor(SettingsCustomColor.SettingsColorOne)
                         
                         Text("Habit Tracker")
                             .foregroundColor(.gray)
@@ -118,7 +118,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                     
                     Button(action: {
@@ -128,7 +128,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                     
                 }
@@ -141,7 +141,7 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(CustomColor.SettingsColorOne)
+                            .foregroundColor(SettingsCustomColor.SettingsColorOne)
                         
                         Text("Water Tracker")
                             .foregroundColor(.gray)
@@ -154,7 +154,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                     
                     Button(action: {
@@ -164,7 +164,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                 }
                 
@@ -176,7 +176,7 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(CustomColor.SettingsColorOne)
+                            .foregroundColor(SettingsCustomColor.SettingsColorOne)
                         
                         Text("Sleep Tracker")
                             .foregroundColor(.gray)
@@ -189,7 +189,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                     
                     Button(action: {
@@ -199,7 +199,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                 }
                 
@@ -209,7 +209,7 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(CustomColor.SettingsColorOne)
+                            .foregroundColor(SettingsCustomColor.SettingsColorOne)
                         
                         Text("Exercise Tracker")
                             .foregroundColor(.gray)
@@ -222,7 +222,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                         
                     })
                     
@@ -233,7 +233,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .padding()
-                            .foregroundColor(CustomColor.SettingsColorTwo)
+                            .foregroundColor(SettingsCustomColor.SettingsColorTwo)
                     })
                 }
             }
@@ -246,7 +246,7 @@ struct SettingsView: View {
     }
 }
 
-struct CustomColor {
+struct SettingsCustomColor {
     static let SettingsColorOne = Color("SettingsColorOne")
     
     static let SettingsColorTwo = Color("SettingsColorTwo")
