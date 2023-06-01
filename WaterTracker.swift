@@ -75,11 +75,11 @@ struct WaterView: View {
                 ZStack (alignment: .leading) {
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .fill(.blue.opacity(0.4))
+                        .fill(WaterCustomColor.WaterColorTwo)
                         .frame(width: WaterFill, height: 100, alignment: .leading)
                     
                     RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(.blue.opacity(0.5), lineWidth: 10)
+                        .strokeBorder(WaterCustomColor.WaterColorThree, lineWidth: 10)
                         .frame(width: 600, height: 100, alignment: .leading)
                     
                 }
@@ -87,7 +87,7 @@ struct WaterView: View {
             
             Text("\(WaterIntake, specifier: "%.0f")")
                 .font(.system(size: 30))
-                .foregroundColor(.blue.opacity(0.5))
+                .foregroundColor(WaterCustomColor.WaterColorThree)
             
             Slider(
                 value: $WaterIntake, 
@@ -96,10 +96,10 @@ struct WaterView: View {
                 Text("Water Intake") 
             } minimumValueLabel: {
                 Text("0")
-                    .foregroundColor(.blue.opacity(0.5))
+                    .foregroundColor(WaterCustomColor.WaterColorTwo)
             } maximumValueLabel: {
                 Text("\(WaterGoal, specifier: "%.0f")")
-                .foregroundColor(.blue.opacity(0.5))
+                .foregroundColor(WaterCustomColor.WaterColorTwo)
             } onEditingChanged: { editing in
                 
                 if WaterIntake / WaterGoal < 0.25 {
@@ -154,7 +154,7 @@ struct WaterView: View {
                     
                 }
             }
-            .tint(Color.blue.opacity(0.5)) 
+            .tint(WaterCustomColor.WaterColorThree)
             
             HStack {
                 
@@ -193,14 +193,14 @@ struct WaterView: View {
                 
                 Text(RestatedWaterGoal)
                     .font(.system(size: 30))
-                    .foregroundColor(.blue.opacity(0.3))
+                    .foregroundColor(WaterCustomColor.WaterColorTwo)
             }
             .padding()
             
             Text(WaterInfoSentence)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
-                .foregroundColor(.blue.opacity(0.3))
+                .foregroundColor(WaterCustomColor.WaterColorTwo)
           
             Spacer()
             
@@ -208,4 +208,14 @@ struct WaterView: View {
         .padding()
         
     }
+}
+
+struct WaterCustomColor {
+    static let WaterColorOne = Color("WaterColorOne")
+    
+    static let WaterColorTwo = Color("WaterColorTwo")
+    
+    static let WaterColorThree = Color("WaterColorThree")
+    
+    static let WaterColorFour = Color("WaterColorFour")
 }
