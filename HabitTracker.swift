@@ -36,32 +36,28 @@ struct HabitView: View {
                 VStack{
                     Image(systemName: StarOne)
                         .font(.system(size: 50))
-                        .foregroundColor(.orange)
-                        .opacity(0.8)
+                        .foregroundColor(HabitCustomColor.HabitColorOne)
                 }
                 .frame(width: 90, height: 200, alignment: .bottom)
                 
                 VStack{
                     Image(systemName: StarTwo)
                         .font(.system(size: 80))
-                        .foregroundColor(.orange)
-                        .opacity(0.6)
+                        .foregroundColor(HabitCustomColor.HabitColorTwo)
                 }
                 .frame(width: 50, height: 50, alignment: .top)
                 
                 VStack{
                     Image(systemName: StarThree)
                         .font(.system(size: 100))
-                        .foregroundColor(.orange)
-                        .opacity(0.4)
+                        .foregroundColor(HabitCustomColor.HabitColorThree)
                 }
                 .frame(width: 140, height: 140, alignment: .top)
                 
                 VStack {
                     Image(systemName: StarFour)
                         .font(.system(size: 150))
-                        .foregroundColor(.orange)
-                        .opacity(0.2)
+                        .foregroundColor(HabitCustomColor.HabitColorFour)
                 }
                 .frame(width: 120, height: 250, alignment: .top)
                 
@@ -80,8 +76,7 @@ struct HabitView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(.orange)
-                            .opacity(0.5)
+                            .foregroundColor(HabitCustomColor.HabitColorFour)
                             .padding()
                         
                         Text("\(habits.Habit1)")
@@ -96,8 +91,7 @@ struct HabitView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(.orange)
-                            .opacity(0.5)
+                            .foregroundColor(HabitCustomColor.HabitColorFour)
                             .padding()
                         
                         Text("\(habits.Habit2)")
@@ -112,8 +106,7 @@ struct HabitView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(.orange)
-                            .opacity(0.5)
+                            .foregroundColor(HabitCustomColor.HabitColorFour)
                             .padding()
                         
                         Text("\(habits.Habit3)")
@@ -127,8 +120,7 @@ struct HabitView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 5)
                             .frame(maxWidth: 250, maxHeight: 50)
-                            .foregroundColor(.orange)
-                            .opacity(0.5)
+                            .foregroundColor(HabitCustomColor.HabitColorFour)
                             .padding()
                         
                         Text("\(habits.Habit4)")
@@ -201,11 +193,20 @@ struct HabitView: View {
                     Image(systemName: configuration.isOn ? "checkmark.square" : "square")
                         .resizable()
                         .frame(width: 50, height: 50)
-                        .opacity(0.5)
-                        .foregroundColor(.orange)
+                        .foregroundColor(HabitCustomColor.HabitColorThree)
                     configuration.label
                 }
             })
         }
     }
+}
+
+struct HabitCustomColor {
+    static let HabitColorOne = Color("HabitColorOne")
+    
+    static let HabitColorTwo = Color("HabitColorTwo")
+    
+    static let HabitColorThree = Color("HabitColorThree")
+    
+    static let HabitColorFour = Color("HabitColorFour")
 }
